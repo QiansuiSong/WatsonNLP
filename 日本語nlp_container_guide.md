@@ -132,17 +132,22 @@ producer_id {
   version: "0.0.1"
 }
 ```
-
-ポート 8080 を公開すると、[こちら](https://github.ibm.com/EmbeddableAI-JP/work/blob/main/nlp/client/nlp_sentiment.html)のサンプルアプリを使ってテストできます。
+REST-ful APIでアクセスしたい場合、ポート8080で公開します。
+ポート 8080 を公開するコマンド:
 
 ```
 docker run -e ACCEPT_LICENSE=true -d -p 8080:8080 watson-nlp-container:v1
 ```
+サンプル：
+<img width="1305" alt="image" src="https://github.com/QiansuiSong/WatsonNLP/assets/88417736/ccdea455-5afb-4ff8-bb27-9c69646d23e3">
 
-試す時にSafariを使って、下記のように設定してください。
 
-　・設定>詳細>メニューバーに開発メニューを表示
- 
-　・開発>クロスオリジンの制限を無効にする にチェック
- 
-　・Safari で上記に nlp_sentiment.html を開く
+
+ ## Tips:
+grpc起動時の module errorを解決する方法:
+
+python -m pip install grpcio
+
+python -m pip install grpcio-tools
+
+python -m pip install watson-nlp-runtime-client
